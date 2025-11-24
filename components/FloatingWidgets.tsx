@@ -20,7 +20,7 @@ const FloatingWidgets: React.FC = () => {
   useEffect(() => {
     if (isOpen && !openaiClientRef.current) {
       try {
-        const apiKey = process.env.OPENROUTER_API_KEY;
+        const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY || process.env.OPENROUTER_API_KEY;
 
         if (!apiKey) {
           setMessages([{
